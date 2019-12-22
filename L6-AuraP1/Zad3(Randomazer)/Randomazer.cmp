@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <!-- attributes for input fields -->
+    <aura:attribute name="min" type="integer" access="public" default="0"/>
+    <aura:attribute name="max" type="integer" access="public" default="0"/>
+    <aura:attribute name="rez" type="integer" access="public" />
+    <aura:attribute name="btn" type="boolean" access="public" default="true" />
+    
+    <!-- Style page -->
+    <div class="slds-p-around_large" onclick="{!c.Check}">
+    <lightning:card  title="Diapozon">
+        <div class="slds-p-around_large">
+            
+			<lightning:input class="slds-align_absolute-center" type="integer" name="min" label="Min"  value="{!v.min}"/>
+    		<lightning:input class="slds-align_absolute-center" type="integer" name="max" label="Max"  value="{!v.max}"/>
+        
+        </div>
+        	<div class="slds-align_absolute-center">
+        		<div class="slds-p-around_large">
+            		<div class="slds-grid slds-grid_pull-padded-medium">
+            
+        				<lightning:button class="slds-col slds-p-horizontal_medium" variant="brand" label="Random" disabled="{!v.btn}" onclick="{! c.Rand }" />
+        			
+            		</div>
+        		</div>
+        	</div>
+    	</lightning:card>
+    </div>
+    
+    <div class="slds-p-around_large" onclick="{!c.Check}">
+    	<lightning:card class="slds-align_absolute-center" title="Result:">
+        	<lightning:formattedNumber  title="rez" label ="Result" value="{!v.rez}"/>
+    	</lightning:card>
+    </div>
+</aura:component>
