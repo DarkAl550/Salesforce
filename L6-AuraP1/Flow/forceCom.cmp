@@ -1,0 +1,15 @@
+<aura:component
+  implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:registerEvent name="cmpEvent" type="c:forceEvent"/>
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+  <aura:registerEvent name="flowEV" type="c:forceEvent" />
+
+  <!--Page style-->
+  <lightning:card title="Flow" class="slds-p-around_medium">
+    <div class="slds-p-around_large"> <lightning:flow aura:id="HW" /> </div>
+    <lightning:button label="bt" onclick="{!c.showToast}" />
+  </lightning:card>
+  
+</aura:component>
