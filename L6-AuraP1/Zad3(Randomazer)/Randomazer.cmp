@@ -1,0 +1,70 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+  <!-- attributes for input fields -->
+  <aura:attribute name="min" type="integer" access="public" />
+  <aura:attribute name="max" type="integer" access="public" />
+  <aura:attribute name="rez" type="integer" access="public" />
+  <aura:attribute
+    name="isActiveBtn"
+    type="boolean"
+    access="public"
+    default="true"
+  />
+
+  <!-- Style page -->
+  <lightning:layout>
+    <lightning:layoutItem padding="around-medium">
+      <div class="slds-p-around_large" onclick="{!c.checkFields}">
+        <lightning:card title="Diapozon">
+          <div class="slds-p-around_large">
+            <lightning:input
+              class="slds-align_absolute-center"
+              type="integer"
+              name="min"
+              label="Min"
+              value="{!v.min}"
+            />
+            <lightning:helptext
+              content="This field have minimal value of range"
+            />
+            <lightning:input
+              class="slds-align_absolute-center"
+              type="integer"
+              name="max"
+              label="Max"
+              value="{!v.max}"
+            />
+
+            <lightning:helptext
+              content="This field have maximum value of range"
+            />
+          </div>
+
+          <div class="slds-align_absolute-center">
+            <div class="slds-p-around_large">
+              <div class="slds-grid slds-grid_pull-padded-medium">
+                <lightning:button
+                  class="slds-col slds-p-horizontal_medium"
+                  variant="brand"
+                  label="Random"
+                  disabled="{!v.isActiveBtn}"
+                  onclick="{! c.rand }"
+                />
+              </div>
+            </div>
+          </div>
+        </lightning:card>
+      </div>
+
+      <div class="slds-p-around_large" onclick="{!c.checkFields}">
+        <lightning:helptext content="Result of random" />
+        <lightning:card class="slds-align_absolute-center" title="Result:">
+          <lightning:formattedNumber
+            title="rez"
+            label="Result"
+            value="{!v.rez}"
+          />
+        </lightning:card>
+      </div>
+    </lightning:layoutItem>
+  </lightning:layout>
+</aura:component>
