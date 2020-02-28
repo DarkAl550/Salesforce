@@ -42,7 +42,7 @@ public class HWWetherRestService {
             
         }
         
-		//execute        
+	//execute        
         System.debug('City name: '+ w.name);
         System.debug('Country: ' + w.sys.country);
         System.debug('Weather: [' + main + ', ' + description);
@@ -62,28 +62,27 @@ public class HWWetherRestService {
     }
     public class Weather{
         public Integer id {get;set;} 
-		public String main {get;set;} 
-		public String description {get;set;} 
-		public String icon {get;set;} 
+	public String main {get;set;} 
+	public String description {get;set;} 		public String icon {get;set;} 
     }
     public class Wind{
         public Integer speed {get;set;} 
-		public Integer deg {get;set;} 
-		public Integer gust {get;set;} 
+	public Integer deg {get;set;} 
+	public Integer gust {get;set;} 
     }
     public class Sys{
         public Integer id {get;set;} 
-		public String country {get;set;} 
-		public Integer sunrise {get;set;} 
-		public Integer sunset {get;set;} 
+	public String country {get;set;} 
+	public Integer sunrise {get;set;} 
+	public Integer sunset {get;set;} 
     }
     public class Main{
         public Double temp {get;set;} 
-		public Double feels_like {get;set;} 
-		public Double temp_min {get;set;} 
-		public Double temp_max {get;set;} 
-		public Integer pressure {get;set;} 
-		public Integer humidity {get;set;} 
+	public Double feels_like {get;set;} 
+	public Double temp_min {get;set;} 
+	public Double temp_max {get;set;} 
+	public Integer pressure {get;set;} 
+	public Integer humidity {get;set;} 
     }
     
     
