@@ -26,8 +26,8 @@ public class HWWetherRestService {
         for(Integer i=0; i<weatherData.size(); i++ ){           
            	status.add(weatherData[i]);
         }
-		String main;
-		String description;        
+	String main;
+	String description;        
         for(String st : status){
             if(st.contains('main')){
                 String[] weatherStatus = st.Split('=');
